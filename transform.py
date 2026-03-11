@@ -1,3 +1,5 @@
+import pandas as pd
+
 def transform_data(df):
     print("Transformando os dados")
 
@@ -6,5 +8,8 @@ def transform_data(df):
 
     #remover duplicados
     df = df.drop_duplicates()
+
+    # converter datetime
+    df["datetime"] = pd.to_datetime(df["datetime"])
 
     return df

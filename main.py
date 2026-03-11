@@ -5,13 +5,10 @@ from config import MONGO_URI, CSV_FILE
 
 def run_etl():
 
-    # Extract
     data = extract_data(CSV_FILE)
 
-    # Transform
     data = transform_data(data)
 
-    # Load
     load_data(data, MONGO_URI)
 
 
